@@ -1,0 +1,11 @@
+import streamlit as st
+
+def display_dashboard(habits_data):
+    st.write("### Habit Dashboard")
+    for habit in habits_data:
+        progress = 100 if habit["status"] == "Completed" else 0
+        st.write(f"📝 {habit['name']} - Status: {habit['status']}")
+        st.progress(progress / 100)
+        if st.button("Mark as Done", key=habit["name"]):
+            habit["status"] = "Completed"
+            st.success(f"Completed: {habit['name']}")

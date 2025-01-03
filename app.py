@@ -1,5 +1,3 @@
-import sys
-st.write(f"Python version: {sys.version}")
 
 import streamlit as st
 import spacy.cli

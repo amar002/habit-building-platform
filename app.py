@@ -4,6 +4,7 @@ from components.natural_language_creation import display_nlp_creation
 from components.habit_dashboard import display_dashboard
 from utils.data_handler import load_habits, save_habits
 
+
 # Initialize session state
 if "habits_data" not in st.session_state:
     st.session_state.habits_data = load_habits()

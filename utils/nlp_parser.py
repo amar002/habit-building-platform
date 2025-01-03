@@ -1,19 +1,8 @@
-import spacy
-
-nlp = spacy.load("en_core_web_sm")
-
 def parse_habit_input(habit_text):
-    doc = nlp(habit_text)
-    habit_name = []
-    frequency = None
-
-    for token in doc:
-        if token.dep_ in ("ROOT", "dobj", "compound"):
-            habit_name.append(token.text)
-        elif token.ent_type_ == "DATE":
-            frequency = token.text
-
+    words = habit_text.split()
+    habit_name = " ".join(words[:-2]) if len(words) > 2 else habit_text
+    frequency = "daily" if "every" in words else "one-time"
     return {
-        "habit_name": " ".join(habit_name),
-        "frequency": frequency or "daily"
+        "habit_name": habit_name,
+        "frequency": frequency
     }

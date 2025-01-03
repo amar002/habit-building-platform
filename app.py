@@ -1,4 +1,6 @@
 import streamlit as st
+import spacy.cli
+spacy.cli.download("en_core_web_sm")
 from components.personalized_suggestions import display_suggestions
 from components.natural_language_creation import display_nlp_creation
 from components.habit_dashboard import display_dashboard

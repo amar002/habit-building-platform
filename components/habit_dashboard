@@ -9,3 +9,4 @@ def display_dashboard(habits_data):
         if st.button("Mark as Done", key=habit["name"]):
             habit["status"] = "Completed"
             st.success(f"Completed: {habit['name']}")
+

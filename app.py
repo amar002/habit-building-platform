@@ -8,7 +8,6 @@ from utils.data_handler import load_habits, save_habits
 if "habits_data" not in st.session_state:
     st.session_state.habits_data = load_habits()
 
-st.image("assets/logo.png", width=200)
 st.title("HabitFlow")
 st.subheader("Build small habits, achieve big goals.")
 

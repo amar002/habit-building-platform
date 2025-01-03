@@ -1,3 +1,6 @@
+import sys
+st.write(f"Python version: {sys.version}")
+
 import streamlit as st
 import spacy.cli
 spacy.cli.download("en_core_web_sm")
